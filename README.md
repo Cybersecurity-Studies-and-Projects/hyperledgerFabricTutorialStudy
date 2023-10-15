@@ -1,6 +1,6 @@
 # Tutorial Hyperledger Fabric
 
-Este repositório contém tutoriais sobre o [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-2.5/tutorials.html). Os tutoriais do Fabric podem ser usados por desenvolvedores para começar a criar suas próprias soluções.
+* Este repositório contém tutoriais sobre o [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-2.5/tutorials.html). Os tutoriais do Fabric podem ser usados por desenvolvedores para começar a criar suas próprias soluções.
 
 ## Etapas
 
