@@ -10,17 +10,17 @@ Este repositório contém tutoriais sobre o [Hyperledger Fabric](https://hyperle
 2. **Executando uma Aplicação Fabric**
     - Fornece uma introdução sobre como usar as APIs fornecidas pelas SDKs do Fabric para invocar contratos inteligentes a partir de aplicações cliente.
 
-3. **Implantando um contrato inteligente em um canal & Criando um canal**
+3. **Implantando um contrato inteligente em um canal e Criando um canal**
     - Podem ser usados para aprender aspectos importantes da administração de uma rede em execução.
 
-4. **Dados privados & CouchDB**
+4. **Dados privados e CouchDB**
     - Explorar recursos importantes do Fabric.
 
 5. **Implantação de uma rede de produção**
     - Implantar o Hyperledger Fabric em produção.
 
 6. **Atualizar um canal**
-    - Atualização da configuração de um canal & Atualização do nível de capacidade de um canal.
+    - Atualização da configuração de um canal e Atualização do nível de capacidade de um canal.
 
 7. **Atualizar componentes como nós pares, nós de ordenação, SDKs e outros**
     - Atualização de seus componentes.
@@ -89,7 +89,7 @@ Após baixar as imagens e os exemplos do Docker do Hyperledger Fabric, é possí
         ```
       - Baixe o script de instalação:
         ```shell
-        curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh && chmod +x install-fabric.sh
+        curl -sSLO https://raw.githubusercontent.com/hyperledger/fabric/main/scripts/install-fabric.sh &e chmod +x install-fabric.sh
         ```
       - Execute o script para instalar os componentes necessários, como imagens Docker e binários:
         ```shell
