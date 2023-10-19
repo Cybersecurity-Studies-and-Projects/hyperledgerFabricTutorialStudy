@@ -221,6 +221,7 @@ meu-projeto-java/
             └── resources/
 ```
 Certifique-se de que seu código-fonte do contrato inteligente esteja corretamente estruturado na pasta src/main/java e que inclua todas as classes e recursos necessários. Por exemplo, você pode ter uma estrutura de diretório semelhante a esta:
+
 ```css
 meu-projeto-java/
     └── src/
