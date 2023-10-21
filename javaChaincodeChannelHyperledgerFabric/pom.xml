@@ -1,27 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.mycompany</groupId>
-    <artifactId>chaincodeChannelHyperledgerFabric</artifactId>
+    <groupId>ufg.inf.pfc1</groupId>
+    <artifactId>javaChaincodeChannelHyperledgerFabric</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
         <exec.mainClass>com.mycompany.chaincodechannelhyperledgerfabric.ChaincodeChannelHyperledgerFabric</exec.mainClass>
     </properties>
     
     <!-- Dependências -->
     <dependencies>
-        <!-- Dependências do Hyperledger Fabric (dependendo da versão do Fabric) -->
-        <!-- Por exemplo, para Fabric v2.4, você pode incluir algo como: -->
+        <!-- <dependency>
+            <groupId>org.hyperledger.fabric-sdk-java</groupId>
+            <artifactId>fabric-sdk-java</artifactId>
+            <version>2.2.10</version>
+        </dependency>
+        -->
         <dependency>
             <groupId>org.hyperledger.fabric-chaincode-java</groupId>
             <artifactId>fabric-chaincode-shim</artifactId>
             <version>2.5.0</version>
         </dependency>
-        <!-- Outras dependências Java -->
+
     </dependencies>
     
     <!-- Plugins de construção -->
@@ -39,4 +43,8 @@
             </plugin>
         </plugins>
     </build>
+
+    <!-- Nome do projeto -->
+    <name>javaChaincodeChannelHyperledgerFabric</name>
+
 </project>
