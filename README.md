@@ -315,3 +315,14 @@ Neste tutorial, você aprendeu a implantar um contrato inteligente Java em um  c
 Lembre-se de que este tutorial se concentra na implantação de contratos inteligentes em Java. Se você estiver usando outra linguagem, como Go, JavaScript ou TypeScript, o processo será diferente, mas as etapas gerais de implantação do chaincode em um  channel no Hyperledger Fabric serão semelhantes.
 
 Agora que você implantou com sucesso seu contrato inteligente, você pode começar a interagir com ele, criando assets, lendo do ledger e realizando outras operações definidas no contrato. Este é apenas o começo de seu projeto de blockchain e há muito mais a explorar no Hyperledger Fabric e nas aplicações de blockchain.
+
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
+<hr/>
