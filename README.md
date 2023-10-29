@@ -1,4 +1,6 @@
 # Tutorial Hyperledger Fabric
+## Síntese sobre a Aplicação Healthapp
+
 ## Pré-requisitos
 1. Conhecimento prévio sobre a utilização prática da plataforma Hyperledger Fabric e seus componentes
     * Base: documentação oficial da Hyperledger Fabric.
@@ -39,7 +41,7 @@
     ```shell
     $ wget https://download.docker.com/linux/static/stable/x86_64/docker-19.03.12.tgz
 
-    $ tar xzvf docker-[19.03.12.tgz
+    $ tar xzvf docker-19.03.12.tgz
 
     $ sudo mv docker/* /usr/bin/
 
@@ -269,8 +271,31 @@ pelos containers. Este terminal será utilizado para a visualização dos logs e
 real.
 
 5. No Terminal 2, execute o seguinte comando:
-./healthapp
-Este comando irá executar o arquivo Go compilado. De acordo com a execução, será
+```shell
+$ ./healthapp
+```
+
+```shell
+Possível erro:
+$ ./healthapp
+SDK created
+Ressource management client created
+
+Unable to initialize the Fabric SDK: failed to save channel: create channel failed: SendEnvelope failed: calling orderer 'localhost:7050' failed: Orderer Server Status Code: (400) BAD_REQUEST. Description: error authorizing update: error validating ReadSet: readset expected key [Group]  /Channel/Application at version 0, but got version 1
+
+Solução:
+$ docker-compose down
+$ rm -rf /var/hyperledger/*
+
+Depois, executar:
+Terminal 1:
+$ sudo docker-compose up
+
+Terminal 2: 
+$ go build
+$ ./healthapp
+```
+**"$ ./healthapp":**  Este comando irá executar o arquivo Go compilado. De acordo com a execução, será
 possível acompanhar os processos necessários para efetivação da rede Hyperledger
 Fabric através da aplicação. Por fim, será especificado no terminal o endereço em
 que a interface de usuário estará disponível.
@@ -278,7 +303,6 @@ Acesse a aplicação pelo navegador através do endereço especificado e explore
 funcionalidades através de sua interface.
 
 
-ps axf | grep docker | grep -v grep | awk ' {print "kill -9 " $1}' | sudo sh
 <hr/>
 <hr/>
 <hr/>
