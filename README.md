@@ -2,7 +2,7 @@
 ## Conceitos Hyperledger Fabric:
 https://github.com/Cybersecurity-Studies-and-Projects/hyperledgerFabricTutorialStudy/tree/main/ConceitosHyperledgerFabric 
 
-## Sobre a aplicação Healthapp - ùnico Host
+## Sobre a aplicação Healthapp - único Host
 https://github.com/Cybersecurity-Studies-and-Projects/hyperledgerFabricTutorialStudy/tree/main/SobreAplicacaoHealthapp 
 
 
