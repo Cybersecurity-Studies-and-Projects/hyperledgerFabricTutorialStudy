@@ -1,6 +1,11 @@
 # Tutorial Hyperledger Fabric
-## Síntese sobre a Aplicação Healthapp:
+## Conceitos Hyperledger Fabric:
 https://github.com/Cybersecurity-Studies-and-Projects/hyperledgerFabricTutorialStudy/tree/main/ConceitosHyperledgerFabric 
+
+## Sobre a aplicação Healthapp - ùnico Host
+
+
+
 ## Pré-requisitos
 1. Conhecimento prévio sobre a utilização prática da plataforma Hyperledger Fabric e seus componentes
     * Base: documentação oficial da Hyperledger Fabric.
