@@ -39,9 +39,7 @@ https://github.com/Cybersecurity-Studies-and-Projects/hyperledgerFabricTutorialS
     $ . ~/.profile
     ```
 
-    go version
-    go env
-    ```
+  
 5. Docker versão 19.03.12
     ```shell
     $ wget https://download.docker.com/linux/static/stable/x86_64/docker-19.03.12.tgz
