@@ -1,0 +1,22 @@
+ignored = ["github.com/pfc/healthapp/chaincode"]
+
+[[constraint]]
+   # Release v1.0.0-alpha4
+   name = "github.com/hyperledger/fabric-sdk-go"
+   revision = "a906355f73d060d7bf95874a9e90dc17589edbb3"
+
+[[override]]
+   name = "github.com/cloudflare/cfssl"
+   revision = "5d63dbd981b5c408effbb58c442d54761ff94fbd"
+
+[[override]]
+   name = "github.com/golang/protobuf"
+   revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
+
+[[override]]
+   name = "google.golang.org/grpc"
+   revision = "7a6a684ca69eb4cae85ad0a484f2e531598c047b"
+
+[prune]
+   go-tests = true
+   unused-packages = true

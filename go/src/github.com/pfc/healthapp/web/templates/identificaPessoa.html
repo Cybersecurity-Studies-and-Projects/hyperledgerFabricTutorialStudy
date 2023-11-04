@@ -1,0 +1,29 @@
+{{define "title"}}identificaPessoa{{end}}
+
+{{define "body"}}
+
+{{ if .Response }}
+{{ if .Success }}
+<div class="alert alert-success" role="alert">
+    Transação concluida, ID: {{ .TransactionId }}
+</div>
+{{ else }}
+<div class="alert alert-danger" role="alert">
+    Erro: {{ .TransactionId}}
+</div>
+{{ end }}
+{{ end }}
+
+<h3>Identifica paciente</h3>
+<form action="/identificaPessoa.html" method="post">
+    <div class="form-group">
+        <input type="text" class="form-control" id="cpf_paciente" name="cpf_paciente" aria-describedby="info_pac"
+            placeholder="CPF">
+        <small id="info_pac" class="form-text text-muted">Insira o CPF do paciente para verificar sua presença
+            nos registros</small>
+    </div>
+    <input type="hidden" name="submitted" value="true">
+    <button type="submit" class="btn btn-primary">Pesquisar</button>
+</form>
+
+{{end}}

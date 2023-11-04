@@ -1,0 +1,86 @@
+version: '3'
+
+networks:
+   default:
+      external:
+         name: healthnet
+
+services:
+
+   peer0_org1:
+      image: hyperledger/fabric-peer:x86_64-1.1.0
+      build: .
+      container_name: peer0_org1
+      environment:
+         - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=healthnet #PARA A SOLUÇÃO EM UNICO HOST COMENTAR ESTA LINHA (INSERIR # NO INICIO
+         - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+         - CORE_VM_DOCKER_ATTACHSTDOUT=true
+         - CORE_LOGGING_LEVEL=DEBUG
+         - CORE_PEER_NETWORKID=healthapp
+         - CORE_PEER_PROFILE_ENABLED=true
+         - CORE_PEER_TLS_ENABLED=false
+         - CORE_PEER_TLS_CERT_FILE=/var/hyperledger/tls/server.crt
+         - CORE_PEER_TLS_KEY_FILE=/var/hyperledger/tls/server.key
+         - CORE_PEER_TLS_ROOTCERT_FILE=/var/hyperledger/tls/ca.crt
+         - CORE_PEER_ID=peer0.org1.app.com
+         - CORE_PEER_ADDRESSAUTODETECT=true
+         - CORE_PEER_ADDRESS=peer0.org1.app.com:7051
+         - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.app.com:7051
+         - CORE_PEER_GOSSIP_USELEADERELECTION=true
+         - CORE_PEER_GOSSIP_ORGLEADER=false
+         - CORE_PEER_GOSSIP_SKIPHANDSHAKE=true
+         - CORE_PEER_LOCALMSPID=org1.app.com
+         - CORE_PEER_MSPCONFIGPATH=/var/hyperledger/msp
+         - CORE_PEER_TLS_SERVERHOSTOVERRIDE=peer0.org1.app.com
+      working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+      command: peer node start
+      volumes:
+         - /var/run/:/host/var/run/
+         - ./crypto-config/peerOrganizations/org1.app.com/peers/peer0.org1.app.com/msp:/var/hyperledger/msp
+         - ./crypto-config/peerOrganizations/org1.app.com/peers/peer0.org1.app.com/tls:/var/hyperledger/tls
+      ports:
+         - 7051:7051
+         - 7053:7053
+      networks:
+         default:
+            aliases:
+               - peer0.org1.app.com
+
+   peer1_org1:
+      image: hyperledger/fabric-peer:x86_64-1.1.0
+      build: .
+      container_name: peer1_org1
+      environment:
+         - CORE_VM_DOCKER_HOSTCONFIG_NETWORKMODE=healthnet #PARA A SOLUÇÃO EM UNICO HOST COMENTAR ESTA LINHA (INSERIR # NO INICIO
+         - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
+         - CORE_VM_DOCKER_ATTACHSTDOUT=true
+         - CORE_LOGGING_LEVEL=DEBUG
+         - CORE_PEER_NETWORKID=healthapp
+         - CORE_PEER_PROFILE_ENABLED=true
+         - CORE_PEER_TLS_ENABLED=false
+         - CORE_PEER_TLS_CERT_FILE=/var/hyperledger/tls/server.crt
+         - CORE_PEER_TLS_KEY_FILE=/var/hyperledger/tls/server.key
+         - CORE_PEER_TLS_ROOTCERT_FILE=/var/hyperledger/tls/ca.crt
+         - CORE_PEER_ID=peer1.org1.app.com
+         - CORE_PEER_ADDRESSAUTODETECT=true
+         - CORE_PEER_ADDRESS=peer1.org1.app.com:7051
+         - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org1.app.com:7051
+         - CORE_PEER_GOSSIP_USELEADERELECTION=true
+         - CORE_PEER_GOSSIP_ORGLEADER=false
+         - CORE_PEER_GOSSIP_SKIPHANDSHAKE=true
+         - CORE_PEER_LOCALMSPID=org1.app.com
+         - CORE_PEER_MSPCONFIGPATH=/var/hyperledger/msp
+         - CORE_PEER_TLS_SERVERHOSTOVERRIDE=peer1.org1.app.com
+      working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
+      command: peer node start
+      volumes:
+         - /var/run/:/host/var/run/
+         - ./crypto-config/peerOrganizations/org1.app.com/peers/peer1.org1.app.com/msp:/var/hyperledger/msp
+         - ./crypto-config/peerOrganizations/org1.app.com/peers/peer1.org1.app.com/tls:/var/hyperledger/tls
+      ports:
+         - 8051:7051
+         - 8053:7053
+      networks:
+         default:
+            aliases:
+               - peer1.org1.app.com

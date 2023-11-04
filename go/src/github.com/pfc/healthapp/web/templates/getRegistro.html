@@ -1,0 +1,117 @@
+{{define "title"}}getRegistro{{end}}
+
+{{define "body"}}
+
+<h3>Verificar Dados</h3>
+<form action="/getRegistro.html" method="POST">
+    <div class="form-group">
+        <label class="control-label" for="cpf_paciente">CPF Paciente:</label>
+        <input type="text" class="form-control" id="cpf_paciente" name="cpf_paciente" placeholder="CPF Paciente">
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="cpf_interessado">CPF do interessado:</label>
+        <input type="text" class="form-control" id="cpf_interessado" name="cpf_interessado"
+            placeholder="CPF do Interessado">
+    </div>
+
+    <input type="hidden" name="submitted" value="true">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{{ if .Response }}
+{{ if .Success }}
+<div class="alert alert-success" role="alert">
+    {{ .Alert }}
+</div>
+
+<div class="container">
+
+    <h4>Dados Pessoais</h4>
+    <div class="row">
+        <div class="col-6">
+            Nome: {{ .Nome}}
+        </div>
+        <div class="col">
+            RG: {{ .RG}}
+        </div>
+        <div class="col">
+            CPF: {{ .CPF}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Data de Nascimento: {{ .DataNascimento}}
+        </div>
+        <div class="col">
+            Sexo: {{ .Sexo}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Mãe: {{ .NomeMae}}
+        </div>
+        <div class="col">
+            Naturalidade: {{ .Naturalidade}}
+        </div>
+    </div>
+
+    <hr>
+    <h4>Endereço</h4>
+
+    <div class="row">
+        <div class="col">
+            Rua: {{ .Rua}}
+        </div>
+        <div class="col">
+            Número: {{ .Numero}}
+        </div>
+        <div class="col">
+            Complemento: {{ .Complemento}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Bairro: {{ .Bairro}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            Município: {{ .Municipio}}
+        </div>
+        <div class="col">
+            Estado: {{ .Estado}}
+        </div>
+        <div class="col">
+            CEP: {{ .CEP}}
+        </div>
+    </div>
+
+    <hr>
+    <h4>Interessados</h4>
+
+    {{range .Interessados}}
+    <div class="row">
+        <div class="col">
+            Nome: {{ .Nome}}
+        </div>
+    </div>
+    {{else}}
+    <div class="row">
+        Não possui interessados
+    </div>
+    {{end}}
+</div>
+
+{{ else }}
+<div class="alert alert-danger" role="alert">
+    Erro: {{ .Alert }}
+</div>
+{{ end }}
+{{ end }}
+
+{{end}}

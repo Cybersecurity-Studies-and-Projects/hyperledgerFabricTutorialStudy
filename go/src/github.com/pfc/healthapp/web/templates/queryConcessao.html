@@ -1,0 +1,47 @@
+{{define "title"}}queryConcessao{{end}}
+
+{{define "body"}}
+
+{{ if .Response }}
+{{ if .Success }}
+<div class="alert alert-success" role="alert">
+    Transação concluida, ID: {{ .TransactionId }}
+</div>
+{{ else }}
+<div class="alert alert-danger" role="alert">
+    Erro: {{ .TransactionId }}
+</div>
+{{ end }}
+{{ end }}
+
+<h3>Cadastrar Interessado</h3>
+<form action="/queryConcessao.html" method="POST">
+    <div class="form-group">
+        <label class="control-label" for="cpf_paciente">CPF Paciente:</label>
+        <input type="text" class="form-control" id="cpf_paciente" name="cpf_paciente" aria-describedby="info_pac"
+            placeholder="CPF Paciente">
+        <small id="info_pac" class="form-text text-muted">Insira o CPF do paciente</small>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label" for="nome_interessado">Nome do interessado:</label>
+        <input type="text" class="form-control" id="nome_interessado" name="nome_interessado" placeholder="Nome">
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label class="control-label" for="cpf_interessado">CPF do interessado:</label>
+            <input type="text" class="form-control" id="cpf_interessado" name="cpf_interessado" placeholder="CPF">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label class="control-label" for="dados">Dados Permitidos:</label>
+            <input type="text" class="form-control" id="dados" name="dados" placeholder="Dados">
+        </div>
+    </div>
+
+    <input type="hidden" name="submitted" value="true">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+{{end}}
